@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { WeatherInterface } from "../interfaces/interfaces";
 import { currentWeather, forecastWeather } from "../services/CurrentWeather.services";
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
+
 function useCallWeather(searchedCity?: string) {
   const [current, setCurrent] = useState<WeatherInterface>();
   const [forecast, setForecast] = useState<WeatherInterface[]>();
@@ -11,7 +14,7 @@ function useCallWeather(searchedCity?: string) {
 
     // Obtener datos actuales del clima segun ciudad
     const getCurrentWeather = async (searchedCity?: string) => {
-      const API = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=a82fa6bafbf87839161d5a9d1453ff13&lang=es`;
+      const API = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}&lang=es`;
       const getCurrent = await currentWeather(API)
       if (!getCurrent.error) {
         setCurrent(getCurrent.data)
@@ -22,7 +25,7 @@ function useCallWeather(searchedCity?: string) {
 
     // Obtener los pronosticos de los siguientes 5 dias de la fecha actual
     const getDaysWeather = async (searchedCity?: string) => {
-      const API = `https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&appid=a82fa6bafbf87839161d5a9d1453ff13&lang=es`;
+      const API = `https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&appid=${apiKey}&lang=es`;
       const getForecast = await forecastWeather(API)
       if (!getForecast.error) {
         setForecast(getForecast.data.list)
