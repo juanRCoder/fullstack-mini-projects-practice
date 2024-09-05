@@ -7,66 +7,66 @@ import animationNieves from '../assets/animationNieves.json';
 import animationLluvia from '../assets/animationLluvia.json';
 
 
-export function Soleado() {
+export function Soleado({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationSoleado}
       />
     </div>
   )
 }
 
-export function Nubes() {
+export function Nubes({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationNubes}
       />
     </div>
   )
 }
 
-export function PocasNubes() {
+export function PocasNubes({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationPocasNubes}
       />
     </div>
   )
 }
 
-export function Trueno() {
+export function Trueno({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationTrueno}
       />
     </div>
   )
 }
 
-export function Nieves() {
+export function Nieves({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationNieves}
       />
     </div>
   )
 }
 
-export function Lluvia() {
+export function Lluvia({ className }: { className: string }) {
   return (
     <div>
       <Lottie
-        className='w-10 h-10'
+        className={className}
         animationData={animationLluvia}
       />
     </div>

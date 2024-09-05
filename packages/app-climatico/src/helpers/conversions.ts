@@ -28,7 +28,7 @@ export const degWind = (n: number): string => {
   }
 };
 
-export const nubocidad = (n: number) => {
+export const cloudiness = (n: number) => {
   if (n == 0) {
     return "Cielo despejado";
   } else if (n >= 1 && n <= 30) {

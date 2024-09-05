@@ -1,11 +1,12 @@
 import { Button, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IoSearchOutline } from "react-icons/io5";
+import { currentTime } from '../helpers/dateTime';
 
-
+const ampm = currentTime();
 
 const StyledButton = styled(Button)({
-  backgroundColor: '#2193B0',
+  background: `${ampm.dateHour == 'a.m.' ? '#0f2027' : '#2193b0'}`,
   color: '#FFFFFF',
   border: '1px solid #FFFFFF',
   borderRadius: '0px 5px 5px 0px',

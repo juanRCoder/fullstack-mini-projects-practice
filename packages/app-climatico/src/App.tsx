@@ -1,92 +1,53 @@
 import './App.css';
-import { degWind, gradeCelsius, nubocidad, visibility } from './helpers/conversions';
-import { currentTime, transformTime } from './helpers/dateTime';
+import { currentTime } from './helpers/dateTime';
 import useCallWeather from './hook/CallWeather';
-import useCallFiveForecasts from './hook/CallFiveForecasts';
-import ImageWeather from './components/ImageWeather';
-import SearchInput from './components/SearchInput';
-import SearchButton from './components/Button';
+import CurrentWeatherDetail from './components/CurrentWeatherDetails';
+import CurrentWeather from './components/CurrentWeather.component';
+import FiveForeCastComponent from './components/FiveForeCastComponent';
+import { TbMapSearch } from "react-icons/tb";
 import { useState } from 'react';
+import SearchComponent from './components/SearchComponent';
+import Footer from './components/Footer';
 
 
 function App() {
-  const [location, setLocation] = useState<string>('lima');
   const [sendLocation, setSendLocation] = useState('');
-  const { current, error } = useCallWeather(sendLocation);
-  const { fiveForecast } = useCallFiveForecasts();
-  const time = currentTime();
+  const { error } = useCallWeather(sendLocation);
 
-  // Recolecto la palabra
-  const searchCity = (city: string) => {
-    setLocation(city)
+
+  // Toma la ciudad encontrada y lo manda a buscar en el hook
+  const handleSearchCity = (city: string) => {
+    setSendLocation(city)
   }
-  // Envio la frase final al hook callWeather
-  const sendCity = () => {
-    setSendLocation(location)
-  };
-
-
+  // Cambio de colores segun el periodo de tiempo
+  const ampm = currentTime();
 
   return (
     <>
-      {error
-        ? (
-          <p>Ciudad no encontrada!</p>
-        )
-        : (
-          <main className='background-fondo'>
-            <h1 className='text-4xl font-semibold'>App Climatico</h1>
-            <div className='py-14 pl-5 flex'>
-              <SearchInput onChange={searchCity} />
-              <SearchButton onClick={sendCity} />
-            </div>
-            <p>{current?.name} {current?.sys.country} - {time.dayWeek}, {time.dayMonth} {time.month}</p>
-            <div>
-              <p>Temp max: {current && gradeCelsius(current?.main.temp_max)}°C</p>
-              <p>Temp min: {current && gradeCelsius(current?.main.temp_min)}°C</p>
-            </div>
-            <ImageWeather icon={current?.weather[0].icon || ''} />
-            <h2 className='text-2xl font-semibold'>{current && gradeCelsius(current?.main.temp)}°</h2>
-            <p> Sensacion de {current && gradeCelsius(current?.main.feels_like)}°C </p>
-            <p>{current && nubocidad(current.clouds.all)}</p>
-            <hr />
-            <section className='flex gap-10'>
-              <div>
-                <p>Viento: {current?.wind.speed}m/s {current && degWind(current.wind.deg)}</p>
-                <p>Humedad: {current?.main.humidity}%</p>
-                <p>Nivel del mar: {current?.main.sea_level} msnm</p>
-              </div>
-              <div>
-                <p>Presion Aftmosferica: {current?.main.pressure}hPa</p>
-                <p>Visibilidad: {current && visibility(current?.visibility)}km</p>
-                <p>Nubosidad: {current?.clouds.all}%</p>
-              </div>
-            </section>
-            <hr />
-            <section>
-              <h1 className='text-2xl font-semibold'>Pronostico</h1>
-              {fiveForecast.map((day, i) => {
-                const date = transformTime(day.dt_txt || '');
-                const hour = (day.dt_txt || '').split(' ')[1];
-                return (
-                  <section key={i}>
-                    <p>{date.dayWeek}, {date.dayMonth} {date.month}</p>
-                    <ImageWeather icon={day.weather[0].icon || ''} />
-                    <h2 className='text-2xl font-semibold'>{current && gradeCelsius(fiveForecast[i].main.feels_like)}°</h2>
-                    <h3>{hour.split(':')[0]}:00 hrs</h3>
-                    <p> Sensacion de {day && gradeCelsius(day?.main.feels_like)}°C </p>
-                    <p>{current && nubocidad(day.clouds.all)}</p>
-                    <div className='pb-4'>
-                      <p>Nubosidad: {day?.clouds.all}%</p>
-                      <p>Humedad: {day?.main.humidity}%</p>
-                    </div>
-                    <hr />
-                  </section>
-                );
-              })}
-            </section>
-          </main>
-        )}
+      <main className={`${ampm.dateHour == 'a.m.' ? 'background-night' : 'background-day'} min-h-screen flex flex-col`}>
+        <article className='max-w-[40rem] m-auto py-5 px-2 flex-grow'>
+          <div className='flex-1'>
+            <h1 className='sm:text-6xl text-4xl font-semibold text-center pb-4'>App Climatico</h1>
+            <SearchComponent sendLocation={handleSearchCity} />
+            {error
+              ? (
+                < >
+                  <TbMapSearch className='h-32 w-32 m-auto' />
+                  <p className='text-center text-2xl'>Ciudad/Provincia no encontrada!</p>
+                </>
+              )
+              : (
+                <>
+                  <CurrentWeather searchCity={sendLocation} />
+                  <CurrentWeatherDetail searchCity={sendLocation} />
+                  <FiveForeCastComponent searchCity={sendLocation} />
+                </>
+              )
+            }
+          </div>
+        </article>
+        <Footer clases="flex-none md:text-base text-center text-white pb-3 pt-10" />
+      </main>
     </>
   )
 }

@@ -41,7 +41,7 @@ export default function SearchInput({onChange}: {onChange: (value: string) => vo
   }
 
   return (
-    <Stack className='w-96 pl-5'>
+    <Stack className='sm:w-[31rem] w-full'>
       <StyledTextField
         label={'Buscar por ciudad/provincia'}
         variant="outlined"

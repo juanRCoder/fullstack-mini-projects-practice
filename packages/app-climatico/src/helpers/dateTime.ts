@@ -24,24 +24,41 @@ const daysOfWeek: { [key: number]: string } = {
 };
 
 export const currentTime = () => {
+  // Fecha
   const date = new Date();
   const dayMonth = date.getDate();
   const month = date.getMonth();
   const dayWeek = date.getDay();
+  // ampm
+  const dateHour = date.toLocaleString().split(' ')[2]
+
   return {
-    dayMonth: dayMonth < 10 ? `0${dayMonth}` : dayMonth,
+    dayMonth: dayMonth < 10 ? `0${dayMonth}` : dayMonth.toString(),
     month: months[month],
     dayWeek: daysOfWeek[dayWeek],
+    dateHour,
   };
 };
 
 export const transformTime = (date: string) => {
+  // Fecha
   const datetime = date.split(" ")[0];
-  const dayWeek = Number(datetime.split("-")[2]);
-  const month = Number(datetime.split("-")[1]);
+  const [year, month, day] = datetime.split("-").map(Number);
+  const newDate = new Date(year, month - 1, day);
+  const dayWeek = newDate.getDay();
+  // Hora
+  const dateHour = date.split(" ")[1];
+  const [hour, minute] = dateHour.split(":").map(Number);
+  const formatHour = hour % 12 || 12;
+  const ampm = formatHour >= 12 ? "PM" : "AM";
+  const newHour = formatHour < 10 ? `0${formatHour}` : formatHour.toString();
+  
   return {
-    dayMonth: dayWeek < 10 ? `0${dayWeek}` : dayWeek,
-    month: months[month],
-    dayWeek: daysOfWeek[dayWeek - 1],
+    dayMonth: day < 10 ? `0${day}` : day.toString(),
+    month: months[month - 1],
+    dayWeek: daysOfWeek[dayWeek],
+    ampm,
+    hour: newHour,
+    minute: minute < 10 ? `0${minute}` : minute.toString(),
   };
 };

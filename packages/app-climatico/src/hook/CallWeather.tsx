@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { WeatherInterface } from "../interfaces/interfaces";
 import { apikey } from "../secrets/data";
-import { currentWeather, forecastWeather } from "../services/CurrentWeather";
+import { currentWeather, forecastWeather } from "../services/CurrentWeather.services";
 
-function useCallWeather(searchedCity: string) {
+function useCallWeather(searchedCity?: string) {
   const [current, setCurrent] = useState<WeatherInterface>();
   const [forecast, setForecast] = useState<WeatherInterface[]>();
   const [error, setError] = useState<boolean>(false);
