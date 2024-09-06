@@ -2,9 +2,9 @@
 
 [01] - [Paleta de Colores](https://paleta-colores.vercel.app/)
 <br />
-[02] - [Calculadora de Propinas](https://calculadora-propinas-02.vercel.app/)
+[02] - [Calculadora de Propinas](https://calculadora-propinas-gray.vercel.app/)
 <br />
-[03] - [App Climatico](https://app-climatico-three.vercel.app/)
+[03] - [App Climatico](https://app-climatico-kohl.vercel.app/)
 <!--
   Crear nuevos proyectos
   npm create vite@latest
