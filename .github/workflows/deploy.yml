@@ -1,0 +1,31 @@
+name: Deploys
+
+# Se activa cuando hace un push en la rama main
+on:
+  push:
+    branches:
+      - main
+
+# Tareas a realizar
+jobs:
+  deploy-app-climatico:
+    runs-on: ubuntu-latest  # Ejecutar la accion en un servidor con ubuntu
+
+    # Pasos a realizar 'steps'  
+    steps:
+      # Descargar el codigo fuente del repositorio
+      - name: Download code
+        uses: actions/checkout@v3
+
+      # Construir proyecto 
+      - name: Build project
+        run: | 
+          npm install
+          npm run build
+
+      # Deployar proyecto
+      - name: Deploy project
+        uses: peaceiris/actions-gh-pages@v4  # Acción que maneja el despliegue a GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}} # Token del usuario guardado en github
+          publish_dir: ./packages/app_climatico/dist  # Carpeta en donde esta contruido
