@@ -1,10 +1,10 @@
 ## Proyectos realizados:
 
-[01] - [Paleta de Colores](https://paleta-colores.vercel.app/)
+[01] - [Paleta de Colores](https://paleta-colores-r01.netlify.app/)
 <br />
-[02] - [Calculadora de Propinas](https://calculadora-propinas-gray.vercel.app/)
+[02] - [Calculadora de Propinas](https://calculadora-propinas-r02.netlify.app//)
 <br />
-[03] - [App Climatico](https://app-climatico-kohl.vercel.app/)
+[03] - [App Climatico](https://app-climatico-r03.netlify.app/)
 <!--
   Crear nuevos proyectos
   npm create vite@latest
