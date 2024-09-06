@@ -28,5 +28,5 @@ jobs:
       - name: Deploy project
         uses: peaceiris/actions-gh-pages@v4  # Acción que maneja el despliegue a GitHub Pages
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}} # Token del usuario guardado en github
+          github_token: ${{ secrets.MY_PERSONAL_TOKEN }} # Token del usuario guardado en github
           publish_dir: ./packages/app_climatico/dist  # Carpeta en donde esta contruido
