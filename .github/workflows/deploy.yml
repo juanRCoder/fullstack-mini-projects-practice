@@ -19,7 +19,8 @@ jobs:
 
       # Construir proyecto 
       - name: Build project
-        run: | 
+        run: |
+          cd packages/app-climatico
           npm install
           npm run build
 
