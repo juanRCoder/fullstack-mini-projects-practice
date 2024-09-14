@@ -9,7 +9,7 @@ function useCallFiveForecasts(searchCity: string) {
   useEffect(() => {
     if (forecast) {
       const forecastArray: WeatherInterface[] = [];
-      const times = ['12:00:00', '12:00:00', '12:00:00', '12:00:00', '12:00:00'];
+      const times = ['12:00:00', '12:00:00', '12:00:00', '12:00:00']
 
       times.forEach((t, i) => {
         const forescastDay = forecast?.filter(day => day.dt_txt?.split(' ')[1] === t);

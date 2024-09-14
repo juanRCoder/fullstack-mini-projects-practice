@@ -14,10 +14,16 @@ function SearchComponent({ sendLocation }: { sendLocation: (location: string) =>
   const sendCity = () => {
     sendLocation(location)
   };
+  // Maneja el evento de presionar la tecla Enter
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      sendCity();
+    }
+  };
 
   return (
     <div className='flex justify-center py-5'>
-      <SearchInput onChange={searchCity} />
+      <SearchInput onChange={searchCity} onKeyDown={handleKeyDown} />
       <SearchButton onClick={sendCity} />
     </div>
   )

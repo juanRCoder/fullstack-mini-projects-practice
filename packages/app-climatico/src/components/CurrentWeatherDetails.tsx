@@ -1,7 +1,7 @@
 import { FaDroplet } from "react-icons/fa6";
 import { FaWind, FaEye, FaCloud } from "react-icons/fa";
 import { LuWaves } from "react-icons/lu";
-import { CircleGauge } from 'lucide-react';
+
 import useCallWeather from "../hook/CallWeather";
 import { degWind, visibility } from "../helpers/conversions";
 
@@ -10,18 +10,17 @@ function CurrentWeatherDetail({ searchCity }: { searchCity: string }) {
   const { current } = useCallWeather(searchCity);
 
   return (
-    <section className='grid grid-cols-2 sm:grid-cols-3 place-items-center mb-5 pl-0 sm:pl-3 gap-4 gap-y-8'>
+    <section  className='grid grid-flow-col auto-cols-[minmax(0,_2fr)] my-7'>
       {[
-        [<FaWind className='h-8 w-8' />, `${current?.wind.speed}m/s ${current && degWind(current.wind.deg)}`],
-        [<CircleGauge className='h-8 w-8' />, `${current?.main.pressure}hPa`],
-        [<FaDroplet className='h-8 w-8' />, `${current?.main.humidity}%`],
-        [<LuWaves className='h-8 w-8' />, `${current?.main.sea_level} msnm`],
-        [<FaEye className='h-8 w-8' />, `${current && visibility(current?.visibility)}km`],
-        [<FaCloud className='h-8 w-8' />, `${current?.clouds.all}%`]
-      ].map(([component, text], i) => (
-        <div key={i} className='flex flex-col sm:flex-row items-center sm:items-start gap-2'>
-          {component}
-          <p className='text-xl font-semibold'>{text}</p>
+        [FaWind , `${current?.wind.speed}m/s ${current && degWind(current.wind.deg)}`],
+        [LuWaves , `${current?.main.sea_level} msnm`],
+        [FaDroplet, `${current?.main.humidity}%`],
+        [FaEye, `${current && visibility(current?.visibility)}km`],
+        [FaCloud, `${current?.clouds.all}%`]
+      ].map(([Component, text], i) => (
+        <div key={i} className='flex flex-col items-center gap-2'>
+          <Component className='h-7 w-7 sm:h-8 sm:w-8' />
+          <p className='text-center text-base sm:text-xl font-semibold'>{String(text)}</p>
         </div>
       ))}
     </section>

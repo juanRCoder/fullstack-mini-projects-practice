@@ -7,7 +7,7 @@ function FiveForeCastComponent({searchCity}: {searchCity: string}) {
   const { fiveForecast } = useCallFiveForecasts(searchCity);
 
   return (
-    <section className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
+    <section className='grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-2'>
       {fiveForecast.map((day, i) => {
         const date = transformTime(day.dt_txt || '');
         return (

@@ -1,6 +1,3 @@
-.background-day {
-  background: linear-gradient(to right, #6dd5ed, #2193b0);
-}
-.background-night {
-  background: linear-gradient(to right, #0f2027 0%, #203a43 50%, #0f2027 100%);
+.background-app {
+  background: linear-gradient(to right, #1e3c72, #2a5298); 
 }

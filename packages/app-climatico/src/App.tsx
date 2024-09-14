@@ -1,5 +1,4 @@
 import './App.css';
-import { currentTime } from './helpers/dateTime';
 import useCallWeather from './hook/CallWeather';
 import CurrentWeatherDetail from './components/CurrentWeatherDetails';
 import CurrentWeather from './components/CurrentWeather.component';
@@ -19,12 +18,11 @@ function App() {
   const handleSearchCity = (city: string) => {
     setSendLocation(city)
   }
-  // Cambio de colores segun el periodo de tiempo
-  const ampm = currentTime();
+
 
   return (
     <>
-      <main className={`${ampm.dateHour == 'a.m.' ? 'background-night' : 'background-day'} min-h-screen flex flex-col`}>
+      <main className='background-app min-h-screen flex flex-col'>
         <article className='max-w-[40rem] m-auto py-5 px-2 flex-grow'>
           <div className='flex-1'>
             <h1 className='sm:text-6xl text-4xl font-semibold text-center pb-4'>App Climatico</h1>

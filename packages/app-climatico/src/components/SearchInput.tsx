@@ -34,8 +34,12 @@ const StyledTextField = styled(TextField)({
   }
 });
 
+export interface propSearchInput {
+  onChange: (value: string) => void;
+  onKeyDown: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+}
 
-export default function SearchInput({onChange}: {onChange: (value: string) => void;}) {
+export default function SearchInput({ onChange, onKeyDown }: propSearchInput) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
   }
@@ -49,6 +53,7 @@ export default function SearchInput({onChange}: {onChange: (value: string) => vo
         InputProps={{
           type: 'search'
         }}
+        onKeyDown={onKeyDown}
         onChange={handleChange}
       />
     </Stack>
