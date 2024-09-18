@@ -1,44 +1,49 @@
 import { useEffect, useState } from "react";
 import { WeatherInterface } from "../interfaces/interfaces";
 import { currentWeather, forecastWeather } from "../services/CurrentWeather.services";
+import useCallCity from "./CallCity";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
 
-function useCallWeather(searchedCity?: string) {
+export default function useCallWeather(searchedCity?: string) {
+  const { city } = useCallCity();
   const [current, setCurrent] = useState<WeatherInterface>();
   const [forecast, setForecast] = useState<WeatherInterface[]>();
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
+    const cityToUse = searchedCity || city;
 
-    // Obtener datos actuales del clima segun ciudad
-    const getCurrentWeather = async (searchedCity?: string) => {
-      const API = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}&lang=es`;
-      const getCurrent = await currentWeather(API)
-      if (!getCurrent.error) {
-        setCurrent(getCurrent.data)
-        setError(getCurrent.error)
+    if (!cityToUse) return; 
+
+    const getWeatherData = async () => {
+      try {
+        const currentAPI = `https://api.openweathermap.org/data/2.5/weather?q=${cityToUse}&appid=${apiKey}&lang=es`;
+        const forecastAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${cityToUse}&appid=${apiKey}&lang=es`;
+
+        const getCurrent = await currentWeather(currentAPI);
+        const getForecast = await forecastWeather(forecastAPI);
+
+        if (getCurrent.error) {
+          setError(getCurrent.error);
+        } else {
+          setCurrent(getCurrent.data);
+        }
+
+        if (getForecast.error) {
+          setError(getForecast.error);
+        } else {
+          setForecast(getForecast.data.list);
+        }
+      } catch (err) {
+        console.error(err)
+        setError(false);
       }
-      setError(getCurrent.error)
-    }
+    };
 
-    // Obtener los pronosticos de los siguientes 5 dias de la fecha actual
-    const getDaysWeather = async (searchedCity?: string) => {
-      const API = `https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&appid=${apiKey}&lang=es`;
-      const getForecast = await forecastWeather(API)
-      if (!getForecast.error) {
-        setForecast(getForecast.data.list)
-        setError(getForecast.error)
-      }
-      setError(getForecast.error)
-    }
-
-    getCurrentWeather(searchedCity ? searchedCity: 'lima')
-    getDaysWeather(searchedCity ? searchedCity: 'lima')
-  }, [searchedCity])
+    getWeatherData();
+  }, [searchedCity, city])
 
   return { current, forecast, error };
 }
-
-export default useCallWeather;

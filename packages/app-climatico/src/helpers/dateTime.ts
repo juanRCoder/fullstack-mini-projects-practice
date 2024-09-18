@@ -50,7 +50,7 @@ export const transformTime = (date: string) => {
   const dateHour = date.split(" ")[1];
   const [hour, minute] = dateHour.split(":").map(Number);
   const formatHour = hour % 12 || 12;
-  const ampm = formatHour >= 12 ? "PM" : "AM";
+  const ampm = hour >= 12 ? "PM" : "AM";
   const newHour = formatHour < 10 ? `0${formatHour}` : formatHour.toString();
   
   return {
