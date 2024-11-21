@@ -3,9 +3,11 @@ import { create } from "zustand";
 interface Store {
   num: number;
   num2: number;
-  operator: string;
   generateNewNumbers: () => void;
+  operator: string;
   handleOperator: (op: string) => void
+  isCorrect: number
+  setIsCorrect: (num: number) => void
 }
 
 export const useStore = create<Store>((set) => ({
@@ -21,5 +23,8 @@ export const useStore = create<Store>((set) => ({
   
   // MANEJADOR DE OPERADORES
   operator: 'sumar',
-  handleOperator: (op: string) => set({operator: op})
+  handleOperator: (op: string) => set({operator: op}),
+
+  isCorrect: 2,
+  setIsCorrect: (num: number) => set({isCorrect: num})
 }));

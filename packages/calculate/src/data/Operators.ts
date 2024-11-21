@@ -3,17 +3,17 @@ import { Plus, Minus } from 'lucide-react';
 export const operators = [
   {
     icon: Plus,
-    bg: 'bg-[#CEEF82]/[4%]',
-    border: 'border-[#CEEF82]',
-    color: '#CEEF82',
+    bg: 'bg-suma/[4%]',
+    border: 'border-suma',
+    color: 'suma',
     label: 'sumar',
   },
   {
 
     icon: Minus,
-    bg: 'bg-[#5D9999]/[4%]',
-    border: 'border-[#5D9999]',
-    color: '#5D9999',
+    bg: 'bg-resta/[4%]',
+    border: 'border-resta',
+    color: 'resta',
     label: 'restar',
   },
 ];

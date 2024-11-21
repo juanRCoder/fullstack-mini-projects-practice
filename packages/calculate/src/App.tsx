@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <Container className="grid min-h-screen grid-rows-[auto_1fr_auto]">
+    <Container className="grid min-h-screen grid-rows-[auto_1fr_auto] max-w-[360px]">
       <Header />
       <Box>
         <Operators />
