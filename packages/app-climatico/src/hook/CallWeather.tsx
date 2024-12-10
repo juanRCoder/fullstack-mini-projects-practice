@@ -13,7 +13,7 @@ export default function useCallWeather(searchedCity?: string) {
   const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
-    const cityToUse = searchedCity || city;
+    const cityToUse = searchedCity || city || "Lima";
 
     if (!cityToUse) return; 
 

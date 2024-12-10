@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 function SearchComponent({ sendLocation }: { sendLocation: (location: string) => void }) {
-  const [location, setLocation] = useState<string>('lima');
+  const [location, setLocation] = useState<string>('Lima');
 
   // Recolecto la palabra
   const searchCity = (city: string) => {
