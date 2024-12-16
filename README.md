@@ -1,4 +1,4 @@
-## Proyectos realizados:
+## Mini-Proyectos:
 
 [01] - [Paleta de Colores](https://paleta-colores-r01.netlify.app/)
 <br />
