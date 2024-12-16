@@ -1,1 +1,0 @@
-## Paleta de Colores
