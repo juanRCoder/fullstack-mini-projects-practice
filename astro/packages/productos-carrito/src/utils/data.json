@@ -1,0 +1,74 @@
+[
+  {
+    "image": "image-waffle-desktop.webp",
+    "image_tablet": "image-waffle-tablet.webp",
+    "image_mobile": "image-waffle-mobile.webp",
+    "type": "Waffle",
+    "name": "Waffle with Berries",
+    "price": 6.5
+  },
+  {
+    "image": "image-creme-brulee-desktop.webp",
+    "image_tablet": "image-creme-brulee-tablet.webp",
+    "image_mobile": "image-creme-brulee-mobile.webp",
+    "type": "Crème Brûlée",
+    "name": "Vanilla Bean Crème Brûlée",
+    "price": 7
+  },
+  {
+    "image": "image-macaron-desktop.webp",
+    "image_tablet": "image-macaron-tablet.webp",
+    "image_mobile": "image-macaron-mobile.webp",
+    "type": "Macaron",
+    "name": "Macaron Mix of Five",
+    "price": 8
+  },
+  {
+    "image": "image-tiramisu-desktop.webp",
+    "image_tablet": "image-tiramisu-tablet.webp",
+    "image_mobile": "image-tiramisu-mobile.webp",
+    "type": "Tiramisu",
+    "name": "Classic Tiramisu",
+    "price": 5.5
+  },
+  {
+    "image": "image-baklava-desktop.webp",
+    "image_tablet": "image-baklava-tablet.webp",
+    "image_mobile": "image-baklava-mobile.webp",
+    "type": "Baklava",
+    "name": "Pistachio Baklava",
+    "price": 4
+  },
+  {
+    "image": "image-meringue-desktop.webp",
+    "image_tablet": "image-baklava-tablet.webp",
+    "image_mobile": "image-baklava-mobile.webp",
+    "type": "Pie",
+    "name": "Lemon Meringue Pie",
+    "price": 5
+  },
+  {
+    "image": "image-cake-desktop.webp",
+    "image_tablet": "image-cake-tablet.webp",
+    "image_mobile": "image-cake-mobile.webp",
+    "type": "Cake",
+    "name": "Red Velvet Cake",
+    "price": 4.5
+  },
+  {
+    "image": "image-brownie-desktop.webp",
+    "image_tablet": "image-brownie-tablet.webp",
+    "image_mobile": "image-brownie-mobile.webp",
+    "type": "Brownie",
+    "name": "Salted Caramel Brownie",
+    "price": 5.5
+  },
+  {
+    "image": "image-panna-cotta-desktop.webp",
+    "image_tablet": "image-panna-cotta-tablet.webp",
+    "image_mobile": "image-panna-cotta-mobile.webp",
+    "type": "Panna Cotta",
+    "name": "Vanilla Panna Cotta",
+    "price": 6.5
+  }
+]

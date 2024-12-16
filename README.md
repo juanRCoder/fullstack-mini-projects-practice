@@ -11,6 +11,10 @@
 [05] - [Tarjetas Musicales](https://tarjetas-musicales-ag02.netlify.app/)
 <br />
 [06] - [Buscador de Perfiles(Github)](https://perfiles-github-v01.netlify.app/)
+<br />
+[07] - [Pagina Heber](https://pagina-heber-as01.netlify.app/)
+<br />
+[08] - [Productos Carrito](https://productos-carrito-as02.netlify.app/)
 
 <!-- 
   Crear nuevos proyectos
@@ -19,6 +23,7 @@
   Crear nuevos proyectos en angular
   npx ng new [nombre-proyecto] --skip-install
 
-  DARLE UNA IDENTIFICACION EN LA CARPET ACUANDO SE CREA EJEMPLO:
-  [004]-new-project 
+  Crear nuevos proyectos en astro
+  npm create astro@latest
+  OJO: no instalar las dependencias / en astro las integraciones se hacen en el mismo sub-proyecto
 -->

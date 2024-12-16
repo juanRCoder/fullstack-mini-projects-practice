@@ -1,0 +1,18 @@
+/* Estilo de toda la barra de desplazamiento */
+.scrollBar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; 
+}
+
+/* Fondo de la barra de scroll (track) */
+.scrollBar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* El "pulgar" de la barra de scroll (thumb) */
+.scrollBar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}

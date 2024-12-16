@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import diseno from "../images/diseno.png";
+import arquitectura from "../images/arquitectura.png";
+import finish from "../images/finish.png";
+
+const flow = [
+  {
+    name: "PLANIFICO",
+    text: "Planifico mis trabajos realizando los planos, verificando todos los detalles conversados con el cliente y armo la solución.",
+    img: diseno,
+  },
+  {
+    name: "CONSTRUYO",
+    text: "Ya habiendo planificado el trabajo me pongo a consultar materiales, medir el espacio y empezar a construir lo acordado.",
+    img: arquitectura,
+  },
+  {
+    name: "FINALIZO",
+    text: "Habiendo terminado lo planificado, la idea plasmada en una vivienda, paso a recibir mis honorarios finales y tal vez una extensión del contrato.",
+    img: finish,
+  },
+];
+---
+
+<section class="mx-4 max-w-7xl sm:mx-auto text-center py-10 flex flex-col items-center">
+  <h3 class="text-2xl text-orange-500 font-bold" data-aos="fade-down">Paso a Paso</h3>
+  <h1 class="text-4xl font-bold text-zinc-800" data-aos="fade-down">Mi flujo de trabajo</h1>
+  <span class="mt-5 h-1 w-28 bg-orange-600 block rounded-full"></span>
+  <section class="max-w-4xl grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12 mx-4">
+    {
+      flow.map((fl) => (
+        <div class={`${fl.name === 'FINALIZO' ? 'sm:row-start-2 sm:col-span-2 lg:row-start-auto lg:col-span-1' : ''}`} data-aos="fade-up">
+          <span class="inline-block rounded-full bg-orange-600">
+            <Image src={fl.img} alt="arquitectura" class="w-24 h-24 p-4" />
+          </span>
+          <h1 class="text-2xl font-semibold py-2">{fl.name}</h1>
+          <p>{fl.text}</p>
+        </div>
+      ))
+    }
+  </section>
+</section>

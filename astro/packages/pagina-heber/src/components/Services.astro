@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import { services } from "../utils/services";
+---
+
+<section id="servicios" class="max-w-7xl mx-4 sm:mx-auto text-center mb-16">
+  <h3 class="text-2xl text-orange-500 font-bold pt-12" data-aos="fade-down">Ofertas Especiales</h3>
+  <h1 class="text-4xl font-bold text-zinc-800 pb-6" data-aos="fade-down">Mis Servicios</h1>
+  <article class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-4xl mx-5 lg:mx-auto my-10">
+    {
+      services.map((service) => (
+        <section class="flex gap-3" data-aos="fade-down">
+          <Image
+            src={service.img}
+            alt="planning"
+            loading="lazy"
+            class="w-16 h-16 outline outline-orange-500 outline-1 p-2 rounded-md"
+          />
+          <div class="text-left">
+            <h1 class="font-semibold mb-2">{service.title}</h1>
+            <p class="text-sm">{service.description}</p>
+          </div>
+        </section>
+      ))
+    }
+  </article>
+</section>

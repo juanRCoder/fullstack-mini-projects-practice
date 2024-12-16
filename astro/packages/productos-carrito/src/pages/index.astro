@@ -1,0 +1,19 @@
+---
+import DessertCards from "../components/cardProduct/DessertCards.astro";
+import ProductsCart from "../components/ProductsCart.astro";
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout title="Productos - carrito">
+	<div class="flex gap-6 max-w-7xl m-auto flex-col sm:flex-row">
+		<section class="w-full md:w-[70%]">
+			<h1 class="text-orange-950 text-4xl font-bold mb-7">Desserts</h1>
+			<div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+				<DessertCards />
+			</div>
+		</section>
+		<section class="relative w-full lg:w-[30%] md:w-[40%]">
+			<ProductsCart />
+		</section>
+	</div>
+</Layout>

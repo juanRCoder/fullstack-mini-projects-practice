@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import constructor from "../images/image-constructor.png";
+---
+
+<header class="relative text-slate-200 w-full fondo-fijo h-[30rem]">
+  <section class="absolute flex flex-col top-0 left-0 w-full h-full justify-center md:justify-end bg-[#000000CE]">
+    <div class="max-w-7xl mx-auto flex">
+      <div class="my-auto mx-5 flex flex-col gap-3 h-full">
+        <h1 class="text-4xl">Heber Ramirez</h1>
+        <h3 class="text-3xl">Contruyendo el futuro!</h3>
+        <span class="h-1 w-52 bg-orange-600 block rounded-full"></span>
+        <p class="py-3 md:w-full lg:w-[28rem]">
+          Me especializo en transformar ideas en realidad. Desde la planificación
+          inicial hasta la entrega final, mi compromiso es ofrecer calidad,
+          seguridad y durabilidad en cada trabajo.
+        </p>
+        <a href="#servicios" aria-label="enlaceMisServicios">
+          <button class="px-6 py-2 bg-orange-700 hover:bg-orange-600 transition rounded-md">
+            Mis Servicios
+          <button>
+        </a>
+      </div>
+      <Image 
+        src={constructor} 
+        alt="constructor" 
+        class="mr-5 md:block hidden object-cover" 
+        loading="eager" 
+      />
+    </div>
+  </section>
+</header>
+
+<style>
+  .fondo-fijo {
+    background-image: url("../images/fondo-construccion.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+  }
+</style>

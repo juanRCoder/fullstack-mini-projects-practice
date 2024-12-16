@@ -1,0 +1,32 @@
+---
+import HomeLayout from "../layout/HomeLayout.astro";
+import Header from "../components/Header.astro";
+import About from "../components/About.astro";
+import Jobs from "../components/Jobs.astro";
+import Services from "../components/Services.astro";
+import Projects from "../components/Projects.astro";
+import TeamWork from "../components/TeamWork.astro";
+import Estadistica from "../components/Estadistica.astro";
+import Flujo from "../components/Flujo.astro";
+---
+
+<HomeLayout titlePage="Heber Ramirez">
+  <main class="font-roboto">
+    <Header />
+    <About />
+    <Jobs />
+    <Services />
+    <Projects />
+    <TeamWork />
+    <Estadistica />
+    <Flujo />
+    <section class="bg-orange-600">
+      <div class="max-w-7xl mx-auto text-center py-10">
+        <h1 class="text-4xl text-slate-200 font-semibold">
+          MAESTRO DE OBRAS | HEBER RAMIREZ
+        </h1>
+        <h3 class="text-slate-200 text-xl">Contratos: 980 203 579</h3>
+      </div>
+    </section>
+  </main>
+</HomeLayout>

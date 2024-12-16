@@ -1,0 +1,32 @@
+---
+import { jobs } from "../utils/jobs";
+---
+
+<article class="grid sm:grid-cols-2 lg:grid-cols-3">
+  {
+    jobs.map((job) => (
+      <section class={`${job.style} relative h-72`}>
+        <div class="absolute top-0 bottom-0 w-full h-full bg-black/70 text-slate-200 flex flex-col justify-end px-2 pb-2">
+          <h3 class="font-bold text-xl" data-aos="fade-right">{job.title}</h3>
+          <span class="my-2 h-1 w-12 bg-orange-600 block rounded-full" data-aos="fade-right"/>
+          <p class="text-md" data-aos="fade-right">{job.description}</p>
+        </div>
+      </section>
+    ))
+  }
+</article>
+
+<style>
+  .fondo-planificacion, .fondo-construccion, .fondo-acabado {
+    background-image: url("../images/img_planificacion.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+  .fondo-construccion {
+    background-image: url("../images/img_construccion.jpg");
+  }
+  .fondo-acabado {
+    background-image: url("../images/img_acabadoEmpastado.jpg");
+  }
+</style>
