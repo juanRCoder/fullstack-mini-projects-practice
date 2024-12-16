@@ -9,7 +9,8 @@
 [04] - [Calculo Financiero](https://calculo-financiero-ag01.netlify.app/)
 <br />
 [05] - [Tarjetas Musicales](https://tarjetas-musicales-ag02.netlify.app/)
-
+<br />
+[06] - [Buscador de Perfiles(Github)](https://tarjetas-musicales-ag02.netlify.app/)
 
 <!-- 
   Crear nuevos proyectos

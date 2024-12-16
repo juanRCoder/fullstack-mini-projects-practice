@@ -1,5 +1,5 @@
 {
-  "name": "mini-proyectos",
+  "name": "proyectos-react",
   "version": "1.0.0",
   "main": "index.js",
   "workspaces": [
@@ -13,19 +13,22 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.7",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "lottie-react": "^2.4.0",
     "lucide-react": "^0.438.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "styled-components": "^6.1.12",
-    "zustand": "^5.0.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^22.5.4"
+    "@types/node": "^22.5.4",
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^6.0.1"
   }
 }

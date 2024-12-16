@@ -1,0 +1,21 @@
+{
+  "name": "calculo-financiero",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/chart.js": "^2.9.41",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.7"
+  }
+}
