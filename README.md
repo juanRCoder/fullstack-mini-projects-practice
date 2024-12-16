@@ -10,7 +10,7 @@
 <br />
 [05] - [Tarjetas Musicales](https://tarjetas-musicales-ag02.netlify.app/)
 <br />
-[06] - [Buscador de Perfiles(Github)](https://tarjetas-musicales-ag02.netlify.app/)
+[06] - [Buscador de Perfiles(Github)](https://perfiles-github-v01.netlify.app/)
 
 <!-- 
   Crear nuevos proyectos
