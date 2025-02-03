@@ -1,4 +1,4 @@
-## Mini-Proyectos:
+## FULLSTACK-MINI-PROJECTS-PRACTICE
 
 [01] - [Paleta de Colores](https://paleta-colores-r01.netlify.app/)
 <br />
